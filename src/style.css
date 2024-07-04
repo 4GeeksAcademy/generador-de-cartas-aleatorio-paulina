@@ -1,1 +1,52 @@
-@import "~bootstrap/dist/css/bootstrap.min.css";
+body {
+  background: green;
+  box-sizing: border-box;
+}
+
+.carta {
+  text-align: center;
+  display: inline-block;
+  background: white;
+  margin: auto;
+  height: 200px;
+  font-size: 80px;
+  width: 250px;
+  padding: 20px;
+  padding-top: 180px;
+  border: 1px solid block;
+  border-radius: 5px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 80px;
+  }
+
+  &::after {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 80px;
+  }
+
+  &.pica::before,
+  &.pica::after {
+    content: "♠ ";
+  }
+  &.trébol::before,
+  &.trébol::after {
+    content: "♣";
+  }
+  &.corazón::before,
+  &.corazón::after {
+    content: "♥";
+    color: red;
+  }
+  &.diamante::before,
+  &.diamante::after {
+    content: "♦";
+    color: red;
+  }
+}
